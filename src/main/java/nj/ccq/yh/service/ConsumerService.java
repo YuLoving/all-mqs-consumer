@@ -39,8 +39,9 @@ public class ConsumerService {
 	
 	@JmsListener(destination="zh-topic")
 	@SendTo("return-queue")
-	public void recevietopic(String text) {
+	public String recevietopic(String text) {
 		System.out.println("Consumer收到:"+text);
+		return text;
 	}
 
 }
